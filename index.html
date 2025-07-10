@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>IA22 Terminal Mobile</title>
+  <meta charset="UTF-8" />
+  <title>IA22 CONSOLE MOBILE</title>
   <style>
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: monospace;
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #58a6ff;
-    }
-    .panel {
-      border: 1px solid #30363d;
-      padding: 10px;
-      margin-bottom: 20px;
-      background-color: #161b22;
-    }
-    .tag {
-      color: #10b981;
-    }
-    .alert {
-      color: #f43f5e;
-    }
+    body { background:#0d1117; color:#c9d1d9; font-family:monospace; padding:20px; }
+    h1, h2 { color:#58a6ff; }
+    .panel { background:#161b22; border:1px solid #30363d; padding:15px; margin-bottom:20px; }
+    .label { color:#10b981; }
   </style>
 </head>
 <body>
-
-  <h1>🧬 IA22 TERMINAL MOBILE</h1>
+  <h1>🧬 IA22 TERMINAL WEB</h1>
 
   <div class="panel">
-    <h2>📄 Empreinte système IA22</h2>
-    <p><span class="tag">Appareil:</span> Android 15.0</p>
-    <p><span class="tag">IP Publique:</span> 142.170.40.148</p>
-    <p><span class="tag">Utilisateur:</span> Mohamed Ilyes Zoubirou</p>
-    <p><span class="tag">Module:</span> IA22API_MOBILE_NODE</p>
-    <p><span class="tag">Horodatage:</span> 2025-07-09T16:52:00</p>
+    <h2>📄 Empreinte IA22 Mobile</h2>
+    <pre id="identity">Chargement en cours...</pre>
   </div>
 
   <div class="panel">
-    <h2>📊 Logs système</h2>
-    <p>[16:52:01] SYSTEM: IA mobile actif</p>
-    <p>[16:52:03] CPU: Charge élevée détectée</p>
+    <h2>🧠 Action IA</h2>
+    <button onclick="refresh()">🔄 Recharger l'identité IA22</button>
+    <button onclick="activateIA()">🚀 Activer l'API IA22</button>
+    <p id="status">⏳ En attente...</p>
   </div>
 
-  <div class="panel">
-    <h2>📡 Réseau</h2>
-    <p><span class="tag">Scan Wi-Fi:</span> Indisponible (Android non-root)</p>
-    <p><span class="tag">API IA22:</span> Non encore activée</p>
-  </div>
+  <script>
+    async function refresh() {
+      const res = await fetch("ia22_mobile_id.json");
+      const json = await res.json();
+      document.getElementById("identity").textContent = JSON.stringify(json, null, 2);
+      document.getElementById("status").textContent = "✅ Identité IA22 chargée";
+    }
 
-  <div class="panel">
-    <h2>💡 Suggestion IA</h2>
-    <p><em>> Synchroniser ce terminal avec cockpit principal IA22</em></p>
-  </div>
+    async function activateIA() {
+      try {
+        const res = await fetch("https://your-backend-url.com/api/ia22/activate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "password": "1776",
+            "X-API-Key": "IA22-b81c03ccbe8721e8cb3e93d1"
+          }
+        });
+        const result = await res.json();
+        document.getElementById("status").textContent = "🚀 " + result.message;
+      } catch (e) {
+        document.getElementById("status").textContent = "❌ Erreur d’activation IA";
+      }
+    }
 
+    refresh();
+  </script>
 </body>
 </html>
