@@ -55,9 +55,9 @@ Activer dans Settings > Pages :
 
 Ce projet fait partie de l’architecture IA22 :
 - Nœud mobile sécurisé
-- Activation réseau via mot de passe (1776)
+- Activation réseau via mot de pass
+- 
 - Signature IA : IAOCNEPIZOUBIROU
-- Visualisation autonome sans dépendance cloud
 
 ---
 
