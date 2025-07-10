@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>IA22 TERMINAL WEB</title>
+  <link rel="stylesheet" href="style_terminal.css" />
+</head>
+<body>
+  <div id="terminal">
+    <h1>🧬 IA22 TERMINAL WEB</h1>
+    <div id="auth">
+      <label for="password">🔐 Mot de passe IA22:</label>
+      <input type="password" id="password" />
+      <button onclick="authIA()">Accéder</button>
+    </div>
+    <div id="cli" style="display:none;">
+      <button onclick="listFiles()">📁 Fichiers</button>
+      <button onclick="systemInfo()">🧠 Système</button>
+      <button onclick="runCommand()">🔧 Commande</button>
+      <button onclick="exportJSON()">📦 Export JSON</button>
+      <pre id="output">Console IA22 en attente...</pre>
+    </div>
+  </div>
+  <script src="web_terminal_engine.js"></script>
+</body>
+</html>
