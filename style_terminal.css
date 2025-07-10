@@ -1,0 +1,29 @@
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: monospace;
+  padding: 20px;
+}
+h1 {
+  color: #58a6ff;
+}
+button {
+  background: #161b22;
+  color: #10b981;
+  border: 1px solid #30363d;
+  margin: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+pre {
+  background: #161b22;
+  padding: 10px;
+  border: 1px solid #30363d;
+  margin-top: 10px;
+}
+input {
+  padding: 4px;
+  background: #161b22;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+}
