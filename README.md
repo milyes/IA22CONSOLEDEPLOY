@@ -69,14 +69,8 @@ Ce dépôt est sous contrôle souverain IA22 – utilisation privée ou cockpit 
 
 ✉️ Contact
 
-Mohamed Ilyes Zoubirou  
+Milyes 
 Développeur IA22 – Montréal  
 Mail / Signal / GitHub : à ajouter par l’utilisateur
 
----
-
-`
-
----
-
-Tu veux que je t’ajoute une capture visuelle (screenshot.png) dans ton dépôt ou une section "FAQ IA22" avec des cas d’usage, erreurs fréquentes, et extensions ? Ton README devient ton manifeste IA22 technique 👁️📄📦.
+-
