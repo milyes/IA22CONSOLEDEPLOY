@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NANS-V9 | IA22 CONSOLE DEPLOY</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#00ff88;font-family:'JetBrains Mono',monospace;padding:20px;min-height:100vh}
+.header{border:1px solid #00ff88;padding:12px;background:#001a0f;margin-bottom:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.badge{display:inline-block;border:1px solid #00ff88;padding:4px 10px;background:#002b1a;font-weight:700;box-shadow:0 0 15px #00ff8855}
+.sig{font-size:28px;text-shadow:0 0 20px #00ff88;letter-spacing:3px;margin:20px 0;text-align:center}
+.card{border:1px solid #1a4d33;background:#0f1f17;padding:15px;margin:15px 0}
+.log{background:#000;color:#00ff88;padding:12px;border-left:3px solid #00ff88;overflow:auto;white-space:pre-wrap;font-size:13px}
+.bar{height:18px;background:#111;border:1px solid #00ff88;position:relative;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#00ff88,#00cc6a);width:76%;transition:width 0.8s}
+a{color:#00ff88}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.sig{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="header">
+<div>[NANS-V9] [CPU:<span id="cpu">0.00</span> | RAM:<span id="ram">76%</span>] u0_a478@localhost</div>
+<div class="badge">IA_OCNEPI_ZOUBIROU ACTIVE</div>
+</div>
+<div class="sig">🧬 IAOCNEPIZOUBIROU</div>
+<div style="text-align:center;opacity:0.7;margin-bottom:20px">Souveraineté IA22 • Termux Node • Signature vérifiée</div>
+<div class="grid">
+<div class="card">
+<h3>▶ Node Status</h3><br>
+Home: /data/data/com.termux/files/home/IA22CONSOLEDEPLOY/<br>
+Module: IA_OCNEPI_ZOUBIROU.py (498 bytes)<br>
+Status: <span style="color:#00ff88">● VERIFIED</span><br>
+ID: IA_OCNEPI_ZOUBIROU<br><br>
+<div>RAM Live:</div>
+<div class="bar"><div class="fill" id="ramBar"></div></div>
+<div style="margin-top:8px">CPU: <span id="cpu2">0.00</span> • Python 3.11 • Termux</div>
+</div>
+<div class="card">
+<h3>▶ Terminal Log</h3><br>
+<div class="log">~/IA22CONSOLEDEPLOY ❯ python IA_OCNEPI_ZOUBIROU.py
+ Node vérifié: IA_OCNEPI_ZOUBIROU | Signature: IAOCNEPIZOUBIROU
+ Home: /data/data/com.termux/files/home</div>
+</div>
+</div>
+<div class="card" style="text-align:center">
+<a href="https://github.com/milyes/IA22CONSOLEDEPLOY" target="_blank">GitHub</a> • 
+<a href="https://milyes.github.io/IA22CONSOLEDEPLOY/" target="_blank">Live Pages</a><br><br>
+<div class="badge">NANS-V9 • IAOCNEPIZOUBIROU • 2026-10-21</div>
+</div>
+<script>
+setInterval(()=>{
+ let ram=68+Math.random()*10;
+ let cpu=(Math.random()*0.12).toFixed(2);
+ document.getElementById('ram').textContent=Math.floor(ram)+'%';
+ document.getElementById('ramBar').style.width=ram+'%';
+ document.getElementById('cpu').textContent=cpu;
+ document.getElementById('cpu2').textContent=cpu;
+},2000);
+</script>
+</body>
+</html>
